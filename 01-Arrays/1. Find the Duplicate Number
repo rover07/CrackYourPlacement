@@ -1,0 +1,63 @@
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+//#4 Implement binary search for solving this without modifying array
+        
+        
+        
+        //  // // #1  Naive/Noob approach O(nlogn) due to sorting
+        
+//         int size=nums.size();
+//         sort(nums.begin(),nums.end());
+//         for(int i=0;i<size;i++)
+//         {
+         
+//             if(nums[i]==nums[i+1])
+//         { 
+//             return nums[i];
+//         } 
+//         }
+//         return 0;
+//     }
+// };
+
+
+
+//         // //#2. Negative Marking Approach
+//         int ans=-1; //used for marking
+//         int size=nums.size();
+
+//         for(int i=0;i<size;i++)
+//         {
+//             int index=abs(nums[i]);
+//             //for already visited
+//             if(nums[index]<0)
+//             { 
+//                 return index;
+//                 // //or we can write it this way
+//                 // ans=index;
+//                 // break;
+//             } 
+//             else
+//             {
+//             //marking visited
+//                 nums[index]*=-1; //we're using value as index and marking it 
+//             }
+//         }
+//         return ans;
+//     }
+// };
+
+// #3:Positioning method (modifying array by swapping the values with the index such that the index and value are same Eg, i=3,nums[i]=3)
+// O(n) Space: O(1)
+    int size=nums.size();
+    while(nums[nums[0]]!=nums[0])
+    {
+        swap(nums[nums[0]],nums[0]);
+
+    }
+    return nums[0];
+    }
+};
+
+ 

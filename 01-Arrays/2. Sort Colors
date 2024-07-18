@@ -1,0 +1,71 @@
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+       ////////// // // Counting approach 
+        int size=nums.size();
+    int zeroCount=0;
+    int oneCount=0;
+    int twoCount=0;
+    for(int i=0;i<size;i++)
+    {
+        if(nums[i]==0)
+        {
+            zeroCount++;
+        }
+        else if(nums[i]==1)
+        {
+            oneCount++;
+        }
+        else if(nums[i]==2)
+        {
+             twoCount++;
+        }
+    }
+
+//    nums.clear();
+    int i=0;
+        while(zeroCount)
+    {
+        nums[i]=0;
+        zeroCount--;
+        i++;
+    }
+    while(oneCount)
+    {
+        nums[i]=1;
+        oneCount--;
+        i++;
+
+    }
+    while(twoCount)
+    {
+        nums[i]=2;
+        twoCount--;
+        i++;
+
+    }  
+}
+};
+    ////////////////2 pointer approach-> This works
+    //
+    //    int size=nums.size();
+    //     int left=0;
+    //     int right=size-1;
+    //     for(int i=0;i<=right;i++)
+    //     {
+    //         if(nums[i]==0)
+    //         {
+
+    //             swap(nums[i],nums[left]);
+    //             left++;
+    //         }
+    //    else if(nums[i]==2)
+    //     {
+    //         swap(nums[i],nums[right]);
+    //         right--;
+    //         i--; //we're doing this as i++ hora hai in for loop, to neutralize its effect, we have to do this
+    //     }
+    //     }
+        
+ 
